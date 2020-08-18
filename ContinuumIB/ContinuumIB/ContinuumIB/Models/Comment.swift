@@ -22,4 +22,4 @@ class Comment {
         self.post = post
         
     }
-}
+} // End of class

@@ -17,6 +17,7 @@ class Post {
     var comments: [Comment]
     
     var photo: UIImage? {
+        
         get {
             guard let photoData = photoData else {return nil}
             return UIImage(data: photoData)
@@ -33,4 +34,4 @@ class Post {
         self.photo = photo
         
     }
-}
+} // End of class

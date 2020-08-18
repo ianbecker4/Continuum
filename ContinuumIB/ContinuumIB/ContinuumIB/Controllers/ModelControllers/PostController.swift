@@ -12,13 +12,16 @@ import UIKit
 class PostController {
     
     // MARK: - Shared instance
-    var sharedInstance: PostController?
+    
+    static let sharedInstance = PostController()
     
     // MARK: - Source of truth
+    
     var posts: [Post] = []
     
     // MARK: - Methods
-    func addComment(text: String, post: Post, completion: @escaping (Result<Comment, PostError>) -> Void) {
+    
+    func addComment(text: String, post: Post, completion: @escaping (Result<Comment?, PostError>) -> Void) {
         
         let comment = Comment(text: text, post: post)
         
@@ -31,4 +34,4 @@ class PostController {
         
         self.posts.append(post)
     }
-}
+} // End of class 
