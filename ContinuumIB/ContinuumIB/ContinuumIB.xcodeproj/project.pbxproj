@@ -17,6 +17,7 @@
 		4B30579C24EC71BA003836FA /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B30579B24EC71BA003836FA /* AddPostTableViewController.swift */; };
 		4B30579E24EC71C4003836FA /* PostDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B30579D24EC71C4003836FA /* PostDetailTableViewController.swift */; };
 		4B3057A024EC71FC003836FA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B30579F24EC71FC003836FA /* Post.swift */; };
+		4B3057A224EC7437003836FA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3057A124EC7437003836FA /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		4B30579B24EC71BA003836FA /* AddPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		4B30579D24EC71C4003836FA /* PostDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableViewController.swift; sourceTree = "<group>"; };
 		4B30579F24EC71FC003836FA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4B3057A124EC7437003836FA /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4B30579F24EC71FC003836FA /* Post.swift */,
+				4B3057A124EC7437003836FA /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				4B30579E24EC71C4003836FA /* PostDetailTableViewController.swift in Sources */,
 				4B30579A24EC7038003836FA /* PostListTableViewController.swift in Sources */,
 				4B30577924EC6E6C003836FA /* AppDelegate.swift in Sources */,
+				4B3057A224EC7437003836FA /* Comment.swift in Sources */,
 				4B3057A024EC71FC003836FA /* Post.swift in Sources */,
 				4B30579C24EC71BA003836FA /* AddPostTableViewController.swift in Sources */,
 				4B30577B24EC6E6C003836FA /* SceneDelegate.swift in Sources */,
