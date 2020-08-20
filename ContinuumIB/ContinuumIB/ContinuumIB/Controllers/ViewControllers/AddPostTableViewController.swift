@@ -11,50 +11,48 @@ import UIKit
 class AddPostTableViewController: UITableViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var selectPhotoButton: UIButton!
-    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     
-
+    // MARK: - Properties
+    var selectedImage: UIImage?
+    
     // MARK: - Lifecycle
     override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
-        
-        photoImageView.image = nil
-        selectPhotoButton.setTitle("Select Photo", for: .normal)
+        captionTextField.text = nil
     }
     
     // MARK: - Actions
-    @IBAction func selectPhotoButtonTapped(_ sender: Any) {
-        
-        photoImageView.image = UIImage(named: "spaceEmptyState")
-        selectPhotoButton.setTitle("", for: .normal)
-    }
     
     @IBAction func addPostButtonTapped(_ sender: Any) {
         
-        guard let photo = photoImageView.image,
-            let caption = captionTextField.text else {return}
+        guard let selectedImage = selectedImage, let caption = captionTextField.text else {return}
         
-        PostController.sharedInstance.createPostWith(photo: photo, caption: caption) { (post) in
+        PostController.sharedInstance.createPostWith(photo: selectedImage, caption: caption) { (post) in
             
-            self.tabBarController?.selectedIndex = 0
         }
-    }
-    
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        
         self.tabBarController?.selectedIndex = 0
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 0
     }
-    */
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPhotoSelectorVC" {
+            let photoSelector = segue.destination as? PhotoSelectorViewController
+            photoSelector?.delegate = self
+        }
+    }
 } // End of class 
+
+// MARK: - Extensions
+
+extension AddPostTableViewController: PhotoSelectorViewControllerDelegate {
+    
+    func photoSelectorViewControllerSelected(image: UIImage) {
+        selectedImage = image
+    }
+} // End of extension
