@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PhotoSelectorViewControllerDelegate: AnyObject {
+protocol PhotoSelectorViewControllerDelegate: class {
     func photoSelectorViewControllerSelected(image: UIImage)
 }
 
