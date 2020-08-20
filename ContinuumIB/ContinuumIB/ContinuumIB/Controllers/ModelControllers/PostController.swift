@@ -23,7 +23,7 @@ class PostController {
     
     func addComment(text: String, post: Post, completion: @escaping (Result<Comment?, PostError>) -> Void) {
         
-        let comment = Comment(text: text, post: post)
+        let comment = Comment(text: text, postReference: <#CKRecord.Reference?#>)
         
         post.comments.append(comment)
     }
